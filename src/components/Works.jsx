@@ -35,8 +35,10 @@ const ProjectCard = ({
 
         <div className='mt-8 flex gap-3'>
           {live_link && (
-            <button
-              onClick={() => window.open(live_link, "_blank")}
+            <a
+              href={live_link}
+              target="_blank"
+              rel="noopener noreferrer"
               className='bg-green-500 text-white flex items-center gap-2 px-6 py-2 rounded-xl text-[14px] font-bold shadow-md hover:bg-green-600 transition-all duration-300'
             >
               <svg 
@@ -48,10 +50,12 @@ const ProjectCard = ({
                 <path fillRule="evenodd" d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L10.53 14.53a.75.75 0 1 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z" clipRule="evenodd" />
               </svg>
               Live Demo
-            </button>
+            </a>
           )}
-          <button
-            onClick={() => window.open(source_code_link, "_blank")}
+          <a
+            href={source_code_link}
+            target="_blank"
+            rel="noopener noreferrer"
             className='bg-[#FFA07A] text-[#1D1D1D] flex items-center gap-2 px-6 py-2 rounded-xl text-[14px] font-bold shadow-md hover:bg-[#ff8c69] transition-all duration-300'
           >
             <img 
@@ -60,7 +64,7 @@ const ProjectCard = ({
               className="w-4 h-4"
             />
             Github
-          </button>
+          </a>
         </div>
       </div>
     </motion.div>

@@ -44,6 +44,28 @@ const Hero = () => {
               className='h-[1px] bg-gradient-to-r from-white-100/20 to-transparent my-10 max-w-md' 
             />
 
+            {/* Mobile Profile Image: Visible only on lg screens and below */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
+              className='flex justify-center relative mb-10 lg:hidden w-full'
+            >
+              <div className='relative w-[180px] h-[180px] sm:w-[260px] sm:h-[260px]'>
+                   {/* Multi-layered Glowing Aura */}
+                  <div className='absolute -inset-10 bg-[#915EFF]/20 rounded-full blur-[80px] animate-pulse' />
+                  <div className='absolute -inset-4 bg-gradient-to-tr from-[#915EFF] via-purple-500 to-blue-400 rounded-full opacity-30 blur-xl animate-pulse delay-700' />
+                  
+                  <div className='relative w-full h-full rounded-full border-[8px] border-white/5 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20'>
+                  <img 
+                      src={personalInfo.profilePic} 
+                      alt='profile' 
+                      className='w-full h-full object-cover transition-all duration-700 hover:scale-110 contrast-125 brightness-110' 
+                  />
+                  </div>
+              </div>
+            </motion.div>
+
             {/* Stats Section */}
             <div className='flex flex-wrap gap-8 sm:gap-20 mb-8 justify-center sm:justify-start w-full'>
                 {personalInfo.stats.map((stat, index) => (
@@ -64,28 +86,32 @@ const Hero = () => {
 
             {/* Actions Section */}
             <div className='flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-start gap-4 sm:gap-6 mt-4 w-full'>
-                <motion.button
+                <motion.a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255, 255, 255, 0.2)" }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => window.open("#", "_blank")} 
                   className='bg-white text-black px-6 py-3 sm:px-8 sm:py-4 rounded-2xl flex items-center gap-3 font-bold transition-all duration-300 shadow-[0_10px_30px_rgba(255,255,255,0.1)]'
                 >
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                     <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
                 </svg>
                 <span className='text-[16px] whitespace-nowrap'>Download Resume</span>
-                </motion.button>
+                </motion.a>
 
                 <div className='flex items-center gap-4'>
                   {personalInfo.socialLinks.map((social, index) => (
-                  <motion.div
+                  <motion.a
+                      href={social.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ y: -5, scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
                       whileTap={{ scale: 0.9 }}
                       initial={{ opacity: 0, scale: 0.5 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 1 + (index * 0.1), type: "spring", stiffness: 300 }}
                       key={social.name}
-                      onClick={() => window.open(social.link, "_blank")}
                       className={`w-12 h-12 rounded-2xl bg-white/5 backdrop-blur-md flex justify-center items-center cursor-pointer transition-all duration-300 border border-white-100/10 shadow-lg group overflow-hidden p-2.5`}
                   >
                       <img 
@@ -93,7 +119,7 @@ const Hero = () => {
                           alt={social.name} 
                           className='w-full h-full object-contain brightness-90 group-hover:brightness-110 transition-all rounded-lg' 
                       />
-                  </motion.div>
+                  </motion.a>
                   ))}
                 </div>
             </div>
@@ -104,7 +130,7 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
               animate={{ opacity: 1, scale: 1, rotate: 0 }}
               transition={{ delay: 0.4, duration: 1, ease: "easeOut" }}
-              className='flex-1 flex justify-center lg:justify-end relative'
+              className='hidden lg:flex flex-1 justify-end relative'
             >
               <div className='relative w-[180px] h-[180px] sm:w-[260px] sm:h-[260px]'>
                   {/* Multi-layered Glowing Aura */}
