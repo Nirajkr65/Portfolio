@@ -36,8 +36,10 @@ const CertificationCard = ({ index, name, issuer, icon, date, link, buttonText, 
         <p className='text-white-100/60 text-[14px] font-medium'>{date}</p>
       </div>
 
-      <button
-        onClick={() => window.open(link, "_blank")}
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
         className='mt-8 w-fit flex items-center gap-2 bg-[#915EFF] text-white px-6 py-2 rounded-xl font-bold text-[14px] hover:bg-[#804dee] shadow-lg shadow-[#915EFF]/20 transition-all active:scale-95'
       >
         {buttonText || "Show credentials..."}
@@ -50,7 +52,7 @@ const CertificationCard = ({ index, name, issuer, icon, date, link, buttonText, 
           <path fillRule="evenodd" d="M4.25 5.5a.75.75 0 0 0-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 1 1.5 0v4A2.25 2.25 0 0 1 12.75 17h-8.5A2.25 2.25 0 0 1 2 14.75v-8.5A2.25 2.25 0 0 1 4.25 4h5a.75.75 0 0 1 0 1.5h-5Z" clipRule="evenodd" />
           <path fillRule="evenodd" d="M13 2.75a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0V4.56L11.53 10.53a.75.75 0 0 1-1.06-1.06l5.97-5.97h-2.19a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
         </svg>
-      </button>
+      </a>
     </div>
   </motion.div>
 );

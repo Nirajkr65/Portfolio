@@ -14,7 +14,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="premium-glass rounded-[3.5rem] p-8 sm:p-12 lg:p-16 relative flex flex-col lg:flex-row items-center justify-between gap-12 sm:gap-16"
+          className="premium-glass rounded-[3.5rem] p-4 sm:p-12 lg:p-16 relative flex flex-col lg:flex-row items-center justify-between gap-12 sm:gap-16"
         >
             {/* Left Column: Text & Content */}
             <div className='flex-1 flex flex-col items-start'>
@@ -63,20 +63,20 @@ const Hero = () => {
             </div>
 
             {/* Actions Section */}
-            <div className='flex flex-row items-center gap-6 flex-nowrap mt-4'>
+            <div className='flex flex-row items-center gap-3 sm:gap-6 flex-nowrap mt-4'>
                 <motion.button
                   whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255, 255, 255, 0.2)" }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => window.open("#", "_blank")} 
-                  className='bg-white text-black px-8 py-4 rounded-2xl flex items-center gap-3 font-bold transition-all duration-300 shadow-[0_10px_30px_rgba(255,255,255,0.1)]'
+                  className='bg-white text-black px-5 py-3 sm:px-8 sm:py-4 rounded-2xl flex items-center gap-2 sm:gap-3 font-bold transition-all duration-300 shadow-[0_10px_30px_rgba(255,255,255,0.1)]'
                 >
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                     <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
                 </svg>
-                <span className='text-[16px] whitespace-nowrap'>Download Resume</span>
+                <span className='text-[14px] sm:text-[16px] whitespace-nowrap'>Download Resume</span>
                 </motion.button>
 
-                <div className='flex items-center gap-4'>
+                <div className='flex items-center gap-2 sm:gap-4'>
                   {personalInfo.socialLinks.map((social, index) => (
                   <motion.div
                       whileHover={{ y: -5, scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
