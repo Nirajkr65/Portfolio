@@ -22,10 +22,7 @@ const ProfileCard = ({ index, name, icon, link }) => (
 
     <h3 className='text-white text-[24px] font-bold tracking-tight mb-8'>{name}</h3>
 
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
+    <div
       className='mt-auto flex items-center gap-2 text-white text-[14px] font-bold hover:text-secondary transition-colors duration-300'
     >
       View Profile
@@ -38,7 +35,7 @@ const ProfileCard = ({ index, name, icon, link }) => (
         <path fillRule="evenodd" d="M4.25 5.5a.75.75 0 0 0-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 1 1.5 0v4A2.25 2.25 0 0 1 12.75 17h-8.5A2.25 2.25 0 0 1 2 14.75v-8.5A2.25 2.25 0 0 1 4.25 4h5a.75.75 0 0 1 0 1.5h-5Z" clipRule="evenodd" />
         <path fillRule="evenodd" d="M13 2.75a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0V4.56L11.53 10.53a.75.75 0 0 1-1.06-1.06l5.97-5.97h-2.19a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
       </svg>
-    </a>
+    </div>
   </motion.div>
 );
 
