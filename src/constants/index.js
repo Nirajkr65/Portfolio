@@ -239,7 +239,7 @@ const codingProfiles = [
     {
         name: "InterviewBit",
         icon: "https://assets.interviewbit.com/assets/ib-logo-904db47f8d2208f21a168bfe4851e0fdcc041f2487b6a8ec0b181d3724dbd012.png",
-        link: "https://www.interviewbit.com/profile/niraj_669",
+        link: "https://www.interviewbit.com/profile/niraj_669/",
     },
 ];
 
