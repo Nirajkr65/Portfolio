@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
+import emailjs from "@emailjs/browser";
+
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { slideIn, textVariant } from "../utils/motion";
@@ -14,6 +16,7 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
 
   const handleChange = (e) => {
     const { target } = e;
@@ -29,17 +32,44 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate sending email
-    setTimeout(() => {
-      setLoading(false);
-      alert("Thank you. I will get back to you as soon as possible.");
+    // 🔴 IMPORTANT: You must replace these with your own EmailJS credentials!
+    // Get them at https://www.emailjs.com/
+    const SERVICE_ID = "service_rvchhwv"; 
+    const TEMPLATE_ID = "template_tklozjo"; 
+    const PUBLIC_KEY = "byDC0jqxoak7mqkL6"; 
 
-      setForm({
-        name: "",
-        email: "",
-        message: "",
-      });
-    }, 1000);
+    emailjs
+      .send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        },
+        PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setLoading(false);
+          setSent(true);
+          
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+
+          setTimeout(() => {
+            setSent(false);
+          }, 1000);
+        },
+        (error) => {
+          setLoading(false);
+          console.error(error);
+          alert(`Something went wrong: ${error.text || error.message || error}`);
+        }
+      );
   };
 
   return (
@@ -54,7 +84,7 @@ const Contact = () => {
       >
         <motion.div
           variants={slideIn("left", "tween", 0.2, 1)}
-          className='flex-[1] max-w-3xl bg-black/40 backdrop-blur-md p-10 rounded-[2.5rem] border border-white-100/10 shadow-2xl relative'
+          className='flex-[1] max-w-3xl bg-black/40 backdrop-blur-md p-6 sm:p-10 rounded-[2.5rem] border border-white-100/10 shadow-2xl relative'
         >
           {/* Decorative Glow */}
           <div className='absolute -top-10 -right-10 w-40 h-40 bg-[#915EFF]/10 rounded-full blur-[80px]' />
@@ -104,9 +134,9 @@ const Contact = () => {
 
             <button
               type='submit'
-              className='bg-[#915EFF] py-4 px-10 rounded-2xl outline-none w-full sm:w-fit sm:self-center text-white font-black shadow-lg shadow-[#915EFF]/20 hover:bg-[#804dee] transition-all active:scale-95 flex items-center justify-center gap-3 group'
+              className={`${sent ? 'bg-green-500 shadow-green-500/20 hover:bg-green-600' : 'bg-[#915EFF] shadow-[#915EFF]/20 hover:bg-[#804dee]'} py-4 px-10 rounded-2xl outline-none w-full sm:w-fit sm:self-center text-white font-black shadow-lg transition-all active:scale-95 flex items-center justify-center gap-3 group`}
             >
-              {loading ? "Sending..." : "Send Message"}
+              {loading ? "Sending..." : sent ? "Message Sent" : "Send Message"}
               <svg 
                 viewBox="0 0 24 24" 
                 fill="none" 
@@ -114,10 +144,16 @@ const Contact = () => {
                 strokeWidth="3" 
                 strokeLinecap="round" 
                 strokeLinejoin="round" 
-                className="w-4 h-4 transition-transform group-hover:translate-x-1"
+                className={`w-4 h-4 transition-transform ${!sent && 'group-hover:translate-x-1'}`}
               >
-                <line x1="22" y1="2" x2="11" y2="13"></line>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                {sent ? (
+                   <path d="M20 6L9 17l-5-5" />
+                ) : (
+                   <>
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                   </>
+                )}
               </svg>
             </button>
           </form>

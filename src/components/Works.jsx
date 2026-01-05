@@ -33,19 +33,19 @@ const ProjectCard = ({
           <p className='mt-2 text-secondary text-[14px] line-clamp-3'>{description}</p>
         </div>
 
-        <div className='mt-8 flex gap-3 relative z-10'>
+        <div className='mt-8 flex gap-3 relative z-50'>
           {live_link && (
             <a
               href={live_link}
               target="_blank"
               rel="noopener noreferrer"
-              className='bg-green-500 text-white flex items-center gap-2 px-6 py-2 rounded-xl text-[14px] font-bold shadow-md hover:bg-green-600 transition-all duration-300'
+              className='bg-green-500 text-white flex items-center gap-2 px-6 py-2 rounded-xl text-[14px] font-bold shadow-md hover:bg-green-600 transition-all duration-300 touch-manipulation'
             >
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 viewBox="0 0 24 24" 
                 fill="currentColor" 
-                className="w-4 h-4"
+                className="w-4 h-4 pointer-events-none"
               >
                 <path fillRule="evenodd" d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L10.53 14.53a.75.75 0 1 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z" clipRule="evenodd" />
               </svg>
@@ -56,12 +56,12 @@ const ProjectCard = ({
             href={source_code_link}
             target="_blank"
             rel="noopener noreferrer"
-            className='bg-[#FFA07A] text-[#1D1D1D] flex items-center gap-2 px-6 py-2 rounded-xl text-[14px] font-bold shadow-md hover:bg-[#ff8c69] transition-all duration-300'
+            className='bg-[#FFA07A] text-[#1D1D1D] flex items-center gap-2 px-6 py-2 rounded-xl text-[14px] font-bold shadow-md hover:bg-[#ff8c69] transition-all duration-300 touch-manipulation'
           >
             <img 
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
               alt="github"
-              className="w-4 h-4"
+              className="w-4 h-4 pointer-events-none"
             />
             Github
           </a>

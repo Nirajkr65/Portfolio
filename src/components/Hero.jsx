@@ -110,13 +110,15 @@ const Hero = () => {
                       whileTap={{ scale: 0.9 }}
                       initial={{ opacity: 0, scale: 0.5 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 1 + (index * 0.1), type: "spring", stiffness: 300 }}
+                      transition={{ delay: 0.5 + (index * 0.05), type: "spring", stiffness: 300 }}
                       key={social.name}
                       className={`w-12 h-12 rounded-2xl bg-white/5 backdrop-blur-md flex justify-center items-center cursor-pointer transition-all duration-300 border border-white-100/10 shadow-lg group overflow-hidden p-2.5`}
                   >
                       <img 
                           src={social.icon} 
-                          alt={social.name} 
+                          alt={social.name}
+                          loading="eager"
+                          decoding="async"
                           className='w-full h-full object-contain brightness-90 group-hover:brightness-110 transition-all rounded-lg' 
                       />
                   </motion.a>
