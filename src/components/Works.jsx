@@ -33,7 +33,7 @@ const ProjectCard = ({
           <p className='mt-2 text-secondary text-[14px] line-clamp-3'>{description}</p>
         </div>
 
-        <div className='mt-8 flex gap-3'>
+        <div className='mt-8 flex gap-3 relative z-10'>
           {live_link && (
             <a
               href={live_link}
