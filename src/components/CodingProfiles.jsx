@@ -9,7 +9,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 const ProfileCard = ({ index, name, icon, link }) => (
   <motion.div
     variants={fadeIn("up", "spring", index * 0.5, 0.75)}
-    className='bg-[#101010] p-8 rounded-[32px] border border-white-100/10 shadow-card flex-1 min-w-[300px] hover:border-white-100/20 transition-all duration-300 group flex flex-col items-center'
+    className='bg-[#101010] p-8 rounded-[32px] border border-white-100/10 shadow-card flex-1 min-w-[300px] hover:border-white-100/20 transition-all duration-300 group flex flex-col items-center relative z-10'
   >
     <div className='w-24 h-24 rounded-full bg-[#151515] flex items-center justify-center p-5 shadow-lg border border-white-100/5 group-hover:scale-110 group-hover:bg-[#202020] transition-all duration-300 mb-6'>
       <img
