@@ -17,13 +17,13 @@ const Hero = () => {
           className="premium-glass rounded-[3.5rem] p-4 sm:p-12 lg:p-16 relative flex flex-col lg:flex-row items-center justify-between gap-12 sm:gap-16"
         >
             {/* Left Column: Text & Content */}
-            <div className='flex-1 flex flex-col items-start'>
+            <div className='flex-1 flex flex-col items-center sm:items-start'>
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              <h1 className='font-black text-white lg:text-[76px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[88px] tracking-tight text-glow-purple whitespace-nowrap'>
+              <h1 className='font-black text-white lg:text-[76px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[88px] tracking-tight text-glow-purple whitespace-normal sm:whitespace-nowrap text-center sm:text-left'>
                 {personalInfo.name}
               </h1>
             </motion.div>
@@ -32,7 +32,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className='mt-6 text-white-100/70 text-[18px] max-w-lg leading-[28px] font-medium'
+              className='mt-6 text-white-100/70 text-[18px] max-w-lg leading-[28px] font-medium text-center sm:text-left'
             >
                 {personalInfo.description}
             </motion.p>
@@ -45,14 +45,14 @@ const Hero = () => {
             />
 
             {/* Stats Section */}
-            <div className='flex flex-wrap gap-12 sm:gap-20 mb-6'>
+            <div className='flex flex-wrap gap-8 sm:gap-20 mb-8 justify-center sm:justify-start w-full'>
                 {personalInfo.stats.map((stat, index) => (
                 <motion.div 
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8 + (index * 0.1), duration: 0.5 }}
                   key={stat.label} 
-                  className='flex flex-col gap-2'
+                  className='flex flex-col gap-2 items-center sm:items-start'
                 >
                     <span className='text-white text-[34px] sm:text-[42px] font-black leading-none drop-shadow-lg'>{stat.value}</span>
                     <span className='text-white-100/40 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-bold'>
@@ -63,20 +63,20 @@ const Hero = () => {
             </div>
 
             {/* Actions Section */}
-            <div className='flex flex-row items-center gap-3 sm:gap-6 flex-nowrap mt-4'>
+            <div className='flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-start gap-4 sm:gap-6 mt-4 w-full'>
                 <motion.button
                   whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255, 255, 255, 0.2)" }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => window.open("#", "_blank")} 
-                  className='bg-white text-black px-5 py-3 sm:px-8 sm:py-4 rounded-2xl flex items-center gap-2 sm:gap-3 font-bold transition-all duration-300 shadow-[0_10px_30px_rgba(255,255,255,0.1)]'
+                  className='bg-white text-black px-6 py-3 sm:px-8 sm:py-4 rounded-2xl flex items-center gap-3 font-bold transition-all duration-300 shadow-[0_10px_30px_rgba(255,255,255,0.1)]'
                 >
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                     <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
                 </svg>
-                <span className='text-[14px] sm:text-[16px] whitespace-nowrap'>Download Resume</span>
+                <span className='text-[16px] whitespace-nowrap'>Download Resume</span>
                 </motion.button>
 
-                <div className='flex items-center gap-2 sm:gap-4'>
+                <div className='flex items-center gap-4'>
                   {personalInfo.socialLinks.map((social, index) => (
                   <motion.div
                       whileHover={{ y: -5, scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
