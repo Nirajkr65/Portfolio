@@ -42,12 +42,12 @@ const ProfileCard = ({ index, name, icon, link }) => (
 const CodingProfiles = () => {
   return (
     <>
-      <motion.div variants={textVariant()} className='text-center'>
-        <div className='flex items-center justify-center gap-4 mb-4'>
+      <motion.div variants={textVariant()}>
+        <div className='flex items-center gap-4 mb-4'>
            <span className='text-5xl'>🏆</span>
            <h2 className={`${styles.sectionHeadText}`}>Coding Profiles</h2>
         </div>
-        <p className={`${styles.sectionSubText} max-w-3xl mx-auto`}>
+        <p className={`${styles.sectionSubText} max-w-3xl`}>
           My problem-solving journey across top platforms.
         </p>
       </motion.div>
