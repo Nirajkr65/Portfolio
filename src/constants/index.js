@@ -1,6 +1,7 @@
 import solvix from "../assets/solvix.jpg";
 import tcs_ion from "../assets/tcs_ion.png";
 import profile from "../assets/image2.jpeg";
+import chatio from "../assets/chatio.png";
 
 export const personalInfo = {
     name: "Niraj Kumar",
@@ -222,6 +223,27 @@ const projects = [
         image: solvix,
         source_code_link: "https://github.com/Nirajkr65/SOlvix-org.git",
         live_link: "https://solvixdev.vercel.app/",
+    },
+    {
+        name: "Chatio",
+        description:
+            "A comprehensive and begineers friendly platform featuring real-time messaging, secure file sharing, interactive polls, and high-quality video calls.",
+        tags: [
+            {
+                name: "react",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "node.js",
+                color: "green-text-gradient",
+            },
+            {
+                name: "stream",
+                color: "pink-text-gradient",
+            },
+        ],
+        image: chatio,
+        source_code_link: "https://github.com/Nirajkr65/Chatio",
     },
 ];
 
