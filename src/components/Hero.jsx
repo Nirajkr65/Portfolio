@@ -87,7 +87,7 @@ const Hero = () => {
             {/* Actions Section */}
             <div className='flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-start gap-4 sm:gap-6 mt-4 w-full'>
                 <motion.a
-                  href="/Resume.pdf"
+                  href="/Niraj-Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255, 255, 255, 0.2)" }}
