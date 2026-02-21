@@ -32,7 +32,6 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    // 🔴 IMPORTANT: You must replace these with your own EmailJS credentials!
     // Get them at https://www.emailjs.com/
     const SERVICE_ID = "service_rvchhwv"; 
     const TEMPLATE_ID = "template_tklozjo"; 

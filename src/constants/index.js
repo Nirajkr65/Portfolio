@@ -9,7 +9,7 @@ export const personalInfo = {
     role: "Full Stack Developer",
     description: "A dedicated Developer specializing in building high-performance web applications and seamless digital experiences.",
     stats: [
-        { label: "DSA Problems", value: "300+" },
+        { label: "DSA Problems", value: "500+" },
         { label: "Tech Skills", value: "10+" },
     ],
     socialLinks: [
